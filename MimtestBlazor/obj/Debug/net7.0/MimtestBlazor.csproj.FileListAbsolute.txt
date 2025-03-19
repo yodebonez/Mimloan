@@ -33,3 +33,4 @@ C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\obj\Debug\net7.0\refint\Mimtes
 C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\obj\Debug\net7.0\MimtestBlazor.pdb
 C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\obj\Debug\net7.0\MimtestBlazor.genruntimeconfig.cache
 C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\obj\Debug\net7.0\ref\MimtestBlazor.dll
+C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\obj\Debug\net7.0\MimtestBlazor.sourcelink.json

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "3c2+MdE6gLvs9E4zTUZ208fzQyQbh/dMqEjUyzkKSqM=",
-  "Source": "Mimtest",
-  "BasePath": "_content/Mimtest",
+  "Hash": "8i/NjHKJe/63xBorcYWIy05edup78uRkSkpD6aOuw2k=",
+  "Source": "MimtestApi",
+  "BasePath": "_content/MimtestApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

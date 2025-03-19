@@ -11,20 +11,36 @@ namespace Mimtest
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+			// Add services to the container.
 
-            builder.Services.AddControllers();
+			builder.Logging.ClearProviders(); 
+			builder.Logging.AddConsole(); 
+			builder.Logging.AddDebug(); 
+
+			builder.Services.AddControllers();
+
+			builder.Services.AddEndpointsApiExplorer();
+			builder.Services.AddSwaggerGen();
+
+
+
 
 			builder.Services.AddDbContext<LoanDbContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+	options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
-			builder.Services.AddScoped<ILoanService, LoanService>();
+			builder.Services.AddScoped<ILoanApplication, LoanApplicationService>();
 
 			var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+			// Configure the HTTP request pipeline.
 
-            app.UseHttpsRedirection();
+			if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
+			{
+				app.UseSwagger();
+				app.UseSwaggerUI();
+			}
+
+			app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

@@ -8,11 +8,19 @@ namespace MimtestApi.DBlayer
 
 		public LoanDbContext(DbContextOptions<LoanDbContext> options) : base(options) { }
 
-		public DbSet<Loan> LoanApplications { get; set; }
+		public DbSet<LoanApplication> LoanApplications { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Loan>().HasKey(x => x.Id);
+			modelBuilder.Entity<LoanApplication>()
+				.HasKey(x => x.Id);
+
+			
+			modelBuilder.Entity<LoanApplication>()
+				.Property(x => x.Status)
+				.HasConversion<string>(); 
+
+			base.OnModelCreating(modelBuilder);
 		}
 	}
 }
