@@ -81,3 +81,7 @@ C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\Microsoft.Ent
 C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\Moq.dll
+C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\xunit.abstractions.dll
+C:\Users\yodeb\source\repos\Mimtest\MimtestBlazor\bin\Debug\net7.0\xunit.core.dll

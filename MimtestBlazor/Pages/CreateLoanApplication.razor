@@ -24,10 +24,10 @@
         <InputNumber class="form-control" @bind-Value="loanApplication.LoanTerm" />
     </div>
 
-    <div class="mb-3">
+  @*   <div class="mb-3">
         <label>Interest Rate (%):</label>
         <InputNumber class="form-control" @bind-Value="loanApplication.InterestRate" />
-    </div>
+    </div> *@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </EditForm>
@@ -35,10 +35,21 @@
 @code {
     private LoanApplication loanApplication = new();
 
+    private void CalculateInterest(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out int term))
+        {
+            loanApplication.InterestRate = term < 6 ? 10m : 15m;
+        }
+    }
+
     private async Task CreateLoan()
     {
         loanApplication.ApplicationDate = DateTime.Now;
         loanApplication.Status = LoanStatus.Pending;
+
+
+        loanApplication.InterestRate = loanApplication.LoanTerm < 6 ? 10m : 15m;
 
         await LoanService.AddAsync(loanApplication);
         Navigation.NavigateTo("/loan-applications");
