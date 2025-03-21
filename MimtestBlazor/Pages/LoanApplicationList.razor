@@ -17,11 +17,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var loan in Loans)
+        @foreach (var loan in PaginatedLoans)
         {
             <tr>
                 <td>@loan.ApplicantName</td>
-                <td>@loan.LoanAmount.ToString("C")</td>
+                <td>@loan.LoanAmount.ToString("C", new System.Globalization.CultureInfo("en-NG"))</td>
                 <td>@loan.LoanTerm</td>
                 <td>@loan.InterestRate%</td>
                 <td>@loan.Status</td>
@@ -35,3 +35,10 @@
         }
     </tbody>
 </table>
+
+
+<div class="d-flex justify-content-between mt-3">
+    <button class="btn btn-secondary" @onclick="PreviousPage" disabled="@(CurrentPage == 1)">Previous</button>
+    <span>Page @CurrentPage of @TotalPages</span>
+    <button class="btn btn-secondary" @onclick="NextPage" disabled="@(CurrentPage == TotalPages)">Next</button>
+</div>

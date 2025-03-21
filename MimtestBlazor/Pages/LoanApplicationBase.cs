@@ -18,14 +18,60 @@ namespace MimtestBlazor.Pages
 		protected List<LoanApplication> Loans = new();
 		protected LoanApplication LoanApplication = new();
 
+		protected List<LoanApplication> PaginatedLoans = new();
+
+
+		protected int CurrentPage { get; set; } = 1;
+		protected int PageSize { get; set; } = 5;  
+		protected int TotalPages { get; set; }
+
+
+
 		protected override async Task OnInitializedAsync()
 		{
 			await LoadLoans();
 		}
 
+	
+
 		protected async Task LoadLoans()
 		{
 			Loans = await LoanService.GetAllAsync();
+			TotalPages = (int)Math.Ceiling((double)Loans.Count / PageSize);
+			UpdatePagination();
+		}
+
+
+	
+
+		protected void UpdatePagination()
+		{
+			PaginatedLoans = Loans
+				.Skip((CurrentPage - 1) * PageSize)
+				.Take(PageSize)
+				.ToList();
+
+			StateHasChanged(); 
+		}
+
+	
+
+		protected void NextPage()
+		{
+			if (CurrentPage < TotalPages)
+			{
+				CurrentPage++;
+				UpdatePagination();
+			}
+		}
+
+		protected void PreviousPage()
+		{
+			if (CurrentPage > 1)
+			{
+				CurrentPage--;
+				UpdatePagination();
+			}
 		}
 
 		protected void NavigateToCreate() => Navigation.NavigateTo("/loan-applications/create");

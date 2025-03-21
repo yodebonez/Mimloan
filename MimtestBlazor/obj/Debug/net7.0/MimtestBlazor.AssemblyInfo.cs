@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MimtestBlazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93122a7c20d4261f04d87baf0c78d38ecf2f584a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c7ebedb9c35393266d902e20718726b13a0e0fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("MimtestBlazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MimtestBlazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
