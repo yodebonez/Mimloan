@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using MimtestBlazor.Data;
+using Microsoft.EntityFrameworkCore;
+using MimtestBlazor.Models;
+using MimtestBlazor.Services;
+using MimtestBlazor.Services.Interfaces;
 
 namespace MimtestBlazor;
 
@@ -13,9 +16,24 @@ public class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
         builder.Services.AddServerSideBlazor();
-        builder.Services.AddSingleton<WeatherForecastService>();
+       
+		builder.Logging.ClearProviders();
+		builder.Logging.AddConsole();
+		builder.Logging.AddDebug();
+		// builder.Services.AddScoped<ILoanApplicationService,LoanApplicationService>();
 
-        var app = builder.Build();
+		builder.Services.AddDbContext<LoanDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+
+		builder.Services.AddScoped<ILoanApplicationService, LoanApplicationService>();
+
+
+		//builder.Services.AddHttpClient<ILoanApplicationService, LoanApplicationService>(client =>
+		//{
+		//	client.BaseAddress = new Uri("https://localhost:7272/");
+		//});
+
+		var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())

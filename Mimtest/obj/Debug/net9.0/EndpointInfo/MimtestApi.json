@@ -34,7 +34,43 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Loan/getallloans": {
+      "get": {
+        "tags": [
+          "Loan"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Loan/get-loan-by-id": {
+      "get": {
+        "tags": [
+          "Loan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Loan/UpdateLoanApplication": {
       "put": {
         "tags": [
           "Loan"
@@ -68,40 +104,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Loan/getallloans": {
-      "get": {
-        "tags": [
-          "Loan"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Loan/get-loan-by-id": {
-      "get": {
-        "tags": [
-          "Loan"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"

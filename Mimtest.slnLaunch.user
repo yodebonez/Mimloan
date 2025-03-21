@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Mimtest\\MimtestApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MimtestBlazor\\MimtestBlazor.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

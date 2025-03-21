@@ -1,35 +1,37 @@
-﻿@* @page "/Loanapplication"
+﻿@page "/loan-applications"
 @inherits LoanApplicationBase
 
-<h3>LoanApplicationList</h3>
-
-
 <h3>Loan Applications</h3>
-<button @onclick="() => AddNewLoan()" class="btn btn-primary">New Loan</button>
+
+<button class="btn btn-primary" @onclick="NavigateToCreate">New Loan Application</button>
+
 <table class="table">
     <thead>
         <tr>
             <th>Applicant</th>
             <th>Amount</th>
+            <th>Term (Months)</th>
+            <th>Interest Rate</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var loan in loans)
+        @foreach (var loan in Loans)
         {
             <tr>
                 <td>@loan.ApplicantName</td>
-                <td>@loan.LoanAmount</td>
+                <td>@loan.LoanAmount.ToString("C")</td>
+                <td>@loan.LoanTerm</td>
+                <td>@loan.InterestRate%</td>
                 <td>@loan.Status</td>
                 <td>
-                    <button @onclick="() => EditLoan(loan.Id)">Edit</button>
-                    <button @onclick="() => DeleteLoan(loan.Id)">Delete</button>
+                    <button class="btn btn-success" @onclick="() => ApproveLoan(loan.Id)">Approve</button>
+                    <button class="btn btn-danger" @onclick="() => RejectLoan(loan.Id)">Reject</button>
+                    <button class="btn btn-info" @onclick="() => NavigateToEdit(loan.Id)">Edit</button>
+                    <button class="btn btn-warning" @onclick="() => DeleteLoan(loan.Id)">Delete</button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-
- *@

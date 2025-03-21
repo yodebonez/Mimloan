@@ -24,12 +24,12 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yodeb/source/repos/Mimtest/MimtestBlazor/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/yodeb/source/repos/Mimtest/MimtestBlazor/Pages/CreateLoanApplication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlTG9hbkFwcGxpY2F0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yodeb/source/repos/Mimtest/MimtestBlazor/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+[C:/Users/yodeb/source/repos/Mimtest/MimtestBlazor/Pages/EditLoanApplication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdExvYW5BcHBsaWNhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yodeb/source/repos/Mimtest/MimtestBlazor/Pages/Index.razor]

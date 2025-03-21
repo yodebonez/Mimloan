@@ -1,0 +1,46 @@
+﻿@page "/loan-applications/create"
+@using MimtestBlazor.Models
+@using MimtestBlazor.Services.Interfaces
+@inject ILoanApplicationService LoanService
+@inject NavigationManager Navigation
+
+<h3>New Loan Application</h3>
+
+<EditForm Model="@loanApplication" OnValidSubmit="CreateLoan">
+    <DataAnnotationsValidator />
+    
+    <div class="mb-3">
+        <label>Applicant Name:</label>
+        <InputText class="form-control" @bind-Value="loanApplication.ApplicantName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Loan Amount:</label>
+        <InputNumber class="form-control" @bind-Value="loanApplication.LoanAmount" />
+    </div>
+
+    <div class="mb-3">
+        <label>Loan Term (Months):</label>
+        <InputNumber class="form-control" @bind-Value="loanApplication.LoanTerm" />
+    </div>
+
+    <div class="mb-3">
+        <label>Interest Rate (%):</label>
+        <InputNumber class="form-control" @bind-Value="loanApplication.InterestRate" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+    private LoanApplication loanApplication = new();
+
+    private async Task CreateLoan()
+    {
+        loanApplication.ApplicationDate = DateTime.Now;
+        loanApplication.Status = LoanStatus.Pending;
+
+        await LoanService.AddAsync(loanApplication);
+        Navigation.NavigateTo("/loan-applications");
+    }
+}

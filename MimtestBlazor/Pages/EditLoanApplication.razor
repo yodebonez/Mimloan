@@ -1,0 +1,57 @@
+﻿@page "/loan-applications/edit/{id:int}"
+@using MimtestBlazor.Models
+@inherits LoanApplicationBase
+
+<h3>Edit Loan Application</h3>
+
+@if (LoanApplication != null)
+{
+    <EditForm Model="@LoanApplication" OnValidSubmit="@UpdateLoan">
+        <DataAnnotationsValidator />
+
+        <div class="mb-3">
+            <label>Applicant Name:</label>
+            <InputText class="form-control" @bind-Value="LoanApplication.ApplicantName" />
+        </div>
+
+        <div class="mb-3">
+            <label>Loan Amount:</label>
+            <InputNumber class="form-control" @bind-Value="LoanApplication.LoanAmount" />
+        </div>
+
+        <div class="mb-3">
+            <label>Loan Term (Months):</label>
+            <InputNumber class="form-control" @bind-Value="LoanApplication.LoanTerm" />
+        </div>
+
+        <div class="mb-3">
+            <label>Interest Rate (%):</label>
+            <InputNumber class="form-control" @bind-Value="LoanApplication.InterestRate" />
+        </div>
+
+        <div class="mb-3">
+            <label>Loan Status:</label>
+            <InputSelect class="form-control" @bind-Value="LoanApplication.Status">
+                @foreach (var status in Enum.GetValues(typeof(LoanStatus)).Cast<LoanStatus>())
+                {
+                    <option value="@status">@status</option>
+                }
+            </InputSelect>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </EditForm>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadLoanById(id);
+    }
+}

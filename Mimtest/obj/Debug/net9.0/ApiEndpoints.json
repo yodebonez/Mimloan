@@ -17,27 +17,6 @@
   },
   {
     "ContainingType": "MimtestApi.Controllers.LoanController",
-    "Method": "UpdateLoan",
-    "RelativePath": "api/Loan/CreateLoanApplication",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "model",
-        "Type": "MimtestApi.Dto.UpdateLoanRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "MimtestApi.Controllers.LoanController",
     "Method": "GetAllLoansById",
     "RelativePath": "api/Loan/get-loan-by-id",
     "HttpMethod": "GET",
@@ -60,6 +39,27 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MimtestApi.Controllers.LoanController",
+    "Method": "UpdateLoan",
+    "RelativePath": "api/Loan/UpdateLoanApplication",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "model",
+        "Type": "MimtestApi.Dto.UpdateLoanRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

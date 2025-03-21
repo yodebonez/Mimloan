@@ -5,10 +5,10 @@ namespace MimtestApi.Service.Interfaces
 {
 	public interface ILoanApplication
 	{
-		Task<Response<List<LoanApplication>>> GetAllLoansApplication();
-		Task<Response<LoanApplication?>> GetLoanById(int id);
-		Task <Response<CreateLoanResponse>>  CreateLoan(CreateLoanRequest loan);
-		Task <Response<UpdateLaonResponse>> UpdateLoan(int id, UpdateLoanRequest loan);
+		Task<IEnumerable<LoanApplication>> GetAllLoansApplication();
+		Task<LoanApplication?> GetLoanById(int id);
+		Task <LoanApplication>  CreateLoan(CreateLoanRequest loan);
+		Task <LoanApplication> UpdateLoan(int id, UpdateLoanRequest loan);
 		Task DeleteLaon(int id);
 	}
 }
